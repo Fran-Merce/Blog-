@@ -1,9 +1,10 @@
-@use '@/styles/vars' as *;
-@use '@/styles/mixins' as *;
+@use "@/styles/vars" as *;
+@use "@/styles/mixins" as *;
 
 .post_card {
   @include box-shadow-md;
   max-width: 360px;
+  min-width: 360px;
   height: 400px;
   display: flex;
   flex-direction: column;

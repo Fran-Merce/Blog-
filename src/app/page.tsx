@@ -12,7 +12,7 @@ export default async function Home() {
   const posts: DaType = await graphClient.request(POST_QUERY);
   return (
     <div className="">
-      <h1>Posts</h1>
+      <h1>Home</h1>
       <ul className={styles.posts_wrapper}>
         {posts.posts.map((post: any) => (
           <li key={post.slug}>
