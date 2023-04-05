@@ -1,14 +1,16 @@
-import { dateFormmater } from '@/helpers/dateFormatter';
-import { textFormatterLenght } from '@/helpers/textFormatterLegth';
-import { Post } from '@/types/post.type';
-import Image from 'next/image';
-import Link from 'next/link';
-import styles from './PostCard.module.scss';
+import Image from "next/image";
+import Link from "next/link";
+
+import { dateFormmater } from "@/helpers/dateFormatter";
+import { textFormatterLenght } from "@/helpers/textFormatterLegth";
+import { Post } from "@/types/post.type";
+
+import styles from "./PostCard.module.scss";
 
 export const PostCard = ({ post }: { post: Post }) => {
-  const { title, author, content, coverImage, slug, date, seo, tags } = post;
+  const { title, author, content, coverImage, slug, date, seo } = post;
   const getDescription = () => {
-    const htmlToText = content.html.replace(/<[^>]*>?/gm, '');
+    const htmlToText = content.html.replace(/<[^>]*>?/gm, "");
     return textFormatterLenght(htmlToText, 96);
   };
 

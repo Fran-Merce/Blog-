@@ -1,4 +1,5 @@
-import { gql } from 'graphql-request';
+import { gql } from "graphql-request";
+
 export const POST_QUERY = gql`
   {
     posts {

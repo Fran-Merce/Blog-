@@ -1,0 +1,15 @@
+{
+  "singleQuote": false,
+  "trailingComma": "all",
+  "importOrder": [
+    "^@/(.*)$",
+    "^[./]",
+    "^react$"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "importOrderStyle": "keep",
+  "jsxBracketSameLine": true,
+  "jsxSingleQuote": false,
+  "sortImports": true
+}
