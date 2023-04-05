@@ -21,7 +21,8 @@
     "react/function-component-definition": "off",
     "no-use-before-define": "off",
     "no-unused-expressions": "warn",
-    "no-html-link-for-pages": "off"
+    "no-html-link-for-pages": "off",
+    "no-console": "warn"
   },
   "env": {
     "browser": true,
