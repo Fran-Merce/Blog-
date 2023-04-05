@@ -1,5 +1,5 @@
 /** @type {import('next').NextConfig} */
-const path = require('path');
+const path = require("path");
 
 const nextConfig = {
   experimental: {
@@ -7,10 +7,10 @@ const nextConfig = {
   },
   reactStrictMode: true,
   images: {
-    domains: ['media.graphassets.com'],
+    domains: ["media.graphassets.com"],
   },
   sassOptions: {
-    includePaths: [path.join(__dirname, 'styles')],
+    includePaths: [path.join(__dirname, "styles")],
   },
 };
 

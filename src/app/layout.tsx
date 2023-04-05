@@ -1,16 +1,18 @@
-import { Navbar } from '@/components/navbar/Navbar';
-import { Roboto } from 'next/font/google';
+import { Roboto } from "next/font/google";
 
-import '@/styles/globals.scss';
-import styles from './styles/Layout.module.scss';
+import { Navbar } from "@/components/navbar/Navbar";
+import "@/styles/globals.scss";
+
+import styles from "./styles/Layout.module.scss";
+
 interface Props {
   children: React.ReactNode;
 }
 
 const roboto = Roboto({
-  weight: '300',
-  style: 'normal',
-  subsets: ['latin'],
+  weight: "300",
+  style: "normal",
+  subsets: ["latin"],
 });
 export default function RootLayout({ children }: Props) {
   return (
