@@ -5,8 +5,7 @@ import { RouteType } from "@/types/routes.type";
 interface Props {
   pathNames: RouteType[];
 }
-function Navigator({ pathNames }: Props) {
-  console.log(pathNames);
+const Navigator = ({ pathNames }: Props) => {
   return (
     <>
       {pathNames.map((route: RouteType) => (
@@ -18,6 +17,6 @@ function Navigator({ pathNames }: Props) {
       ))}
     </>
   );
-}
+};
 
 export default Navigator;

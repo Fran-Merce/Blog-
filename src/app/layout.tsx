@@ -1,9 +1,6 @@
 import { Roboto } from "next/font/google";
 
 import { Navbar } from "@/components/navbar/Navbar";
-import "@/styles/globals.scss";
-
-import styles from "./styles/Layout.module.scss";
 
 interface Props {
   children: React.ReactNode;
@@ -22,7 +19,7 @@ export default function RootLayout({ children }: Props) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
       </head>
-      <body className={(roboto.className, styles.layout)}>
+      <body className={roboto.className}>
         <Navbar />
         {children}
       </body>

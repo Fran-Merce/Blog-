@@ -5,8 +5,6 @@ import { graphClient } from "@/lib/graphql-client";
 import { POST_QUERY_BY_SLUG } from "@/lib/queries";
 import { Post } from "@/types/post.type";
 
-import styles from "./post.module.scss";
-
 interface DaTypePost {
   post: Post;
 }
@@ -31,7 +29,7 @@ export default async function PostPage({
   const { post }: DaTypePost = await getProduct(slug);
   return (
     <div className={roboto.className}>
-      <div className={styles.page_wrapper}>
+      <div>
         <header>
           <Image
             alt={post.coverImage.fileName}
@@ -40,9 +38,9 @@ export default async function PostPage({
             height={700}
           />
         </header>
-        <main className={styles.post_wrapper}>
+        <main>
           <h1>{post.title}</h1>
-          <p className={styles.excerpt}>{post.excerpt}</p>
+          <p>{post.excerpt}</p>
           <div dangerouslySetInnerHTML={{ __html: post.content.html }} />
         </main>
       </div>

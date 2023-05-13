@@ -5,8 +5,6 @@ import { dateFormmater } from "@/helpers/dateFormatter";
 import { textFormatterLenght } from "@/helpers/textFormatterLegth";
 import { Post } from "@/types/post.type";
 
-import styles from "./PostCard.module.scss";
-
 export const PostCard = ({ post }: { post: Post }) => {
   const { title, author, content, coverImage, slug, date, seo } = post;
   const getDescription = () => {
@@ -15,20 +13,14 @@ export const PostCard = ({ post }: { post: Post }) => {
   };
 
   return (
-    <div className={styles.post_card}>
-      <Image
-        src={coverImage.url}
-        alt={seo}
-        className={styles.img}
-        width={100}
-        height={100}
-      />
-      <div className={styles.info_wrapper}>
+    <div>
+      <Image src={coverImage.url} alt={seo} width={100} height={100} />
+      <div>
         <h3>{textFormatterLenght(title, 32)}</h3>
         <p>{getDescription()}</p>
-        <div className={styles.info}>
-          <p className={styles.author}>{author.name}</p>
-          <p className={styles.date}>{dateFormmater(date)}</p>
+        <div>
+          <p>{author.name}</p>
+          <p>{dateFormmater(date)}</p>
         </div>
       </div>
       <Link href={`post/${slug}`}>View More</Link>

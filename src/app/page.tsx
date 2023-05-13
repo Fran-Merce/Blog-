@@ -1,7 +1,6 @@
 import { PostCard } from "@/components/post-card/PostCard";
 import { graphClient } from "@/lib/graphql-client";
 import { POST_QUERY } from "@/lib/queries";
-import styles from "@/styles/pages/home.module.scss";
 import { Post } from "@/types/post.type";
 
 type DaType = {
@@ -13,7 +12,7 @@ export default async function Home() {
   return (
     <div className="">
       <h1>Home</h1>
-      <ul className={styles.posts_wrapper}>
+      <ul>
         {posts.posts.map((post: any) => (
           <li key={post.slug}>
             <PostCard post={post} />
