@@ -1,6 +1,5 @@
 "use client";
 
-import styles from "@/app/posts/page.module.scss";
 import { PostCard } from "@/components/post-card/PostCard";
 import { POST_PER_PAGE } from "@/constants/offset.constant";
 import { Post } from "@/types/post.type";
@@ -24,8 +23,8 @@ function PostsList({ posts }: Props) {
   }, [data, posts]);
 
   return (
-    <div className={styles.posts_wrapper}>
-      <div className={styles.list}>
+    <div>
+      <div>
         {data.map((post: Post) => (
           <PostCard key={post.slug} post={post} />
         ))}

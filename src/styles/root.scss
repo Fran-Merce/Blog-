@@ -1,0 +1,11 @@
+@import "./functions";
+@import "./mixins";
+@import "./tokens";
+@import "./globals.scss";
+
+$variables: ();
+$variables: map-merge($variables, $design-tokens);
+
+:root {
+  @include declare-css-variables($variables);
+}

@@ -1,0 +1,23 @@
+@mixin declare-css-variables($variables-map) {
+  @each $key, $value in $variables-map {
+    // Unquote strings
+    $parsed-value: if(type-of($value) == string, unquote($value), $value);
+
+    // Get value unit
+    $value-unit: if(type-of($parsed-value) == number, unit($parsed-value), null);
+
+    // Convert px to rem
+    $parsed-value: if($value-unit == px, to-rem($parsed-value), $parsed-value);
+
+    // Convert color to rgb
+    @if str-index($key, color) != 0 {
+      @if type-of($parsed-value) == color {
+        @if alpha($parsed-value) == 1 {
+          $parsed-value: unquote("#{red($parsed-value)}, #{green($parsed-value)}, #{blue($parsed-value)}");
+        }
+      }
+    }
+
+    --#{$key}: #{$parsed-value};
+  }
+}

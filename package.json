@@ -25,18 +25,19 @@
     "typescript": "5.0.3"
   },
   "devDependencies": {
-    "@types/prettier": "^2.7.2",
     "@trivago/prettier-plugin-sort-imports": "^4.1.1",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-config-node": "^4.1.0",
+    "@types/prettier": "^2.7.2",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
+    "eslint-config-node": "^4.1.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
-    "prettier": "^2.8.7"
+    "prettier": "^2.8.7",
+    "unocss": "^0.51.12"
   },
   "lint-staged": {
     "*.(ts|tsx)": [

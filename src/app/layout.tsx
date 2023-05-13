@@ -1,6 +1,7 @@
 import { Roboto } from "next/font/google";
 
 import { Navbar } from "@/components/navbar/Navbar";
+import "@/styles/root.scss";
 
 interface Props {
   children: React.ReactNode;
@@ -11,6 +12,7 @@ const roboto = Roboto({
   style: "normal",
   subsets: ["latin"],
 });
+
 export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
