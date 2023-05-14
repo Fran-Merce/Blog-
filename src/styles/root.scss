@@ -2,6 +2,7 @@
 @import "./mixins";
 @import "./tokens";
 @import "./globals.scss";
+@import "./shadows.scss";
 
 $variables: ();
 $variables: map-merge($variables, $design-tokens);

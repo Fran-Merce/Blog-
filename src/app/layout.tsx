@@ -1,4 +1,4 @@
-import { Roboto } from "next/font/google";
+import { Poppins, Roboto } from "next/font/google";
 
 import { Navbar } from "@/components/navbar/Navbar";
 import "@/styles/root.scss";
@@ -7,7 +7,13 @@ interface Props {
   children: React.ReactNode;
 }
 
-const roboto = Roboto({
+// const roboto = Roboto({
+//   weight: "300",
+//   style: "normal",
+//   subsets: ["latin"],
+// });
+
+const poppins = Poppins({
   weight: "300",
   style: "normal",
   subsets: ["latin"],
@@ -21,7 +27,7 @@ export default function RootLayout({ children }: Props) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
       </head>
-      <body className={roboto.className}>
+      <body className={poppins.className}>
         <Navbar />
         {children}
       </body>

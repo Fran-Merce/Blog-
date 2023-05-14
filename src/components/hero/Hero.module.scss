@@ -1,0 +1,30 @@
+@import "/src/styles/functions";
+.wrapper {
+  // background: color(light-5);
+
+  height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: spacing(xl);
+  margin-bottom: rem(32px);
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.content {
+  max-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: spacing(xxs);
+  text-align: center;
+
+  img {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}

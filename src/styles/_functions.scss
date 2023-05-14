@@ -43,3 +43,15 @@
 
   @return $var;
 }
+
+@function border-radius($value: md) {
+  $sizes: (
+    sm: to-rem(2px),
+    md: to-rem(4px),
+    lg: to-rem(8px),
+    pill: to-rem(9999px),
+    circle: 50%,
+  );
+
+  @return map-get($sizes, $value);
+}

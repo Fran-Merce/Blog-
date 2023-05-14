@@ -1,16 +1,24 @@
-"use client";
-
+import Image from "next/image";
 import Link from "next/link";
 
 import { Routes } from "@/types/routes.type";
 
 import Navigator from "../navigator/Navigator";
+import styles from "./Navbar.module.scss";
 
 export const Navbar = () => {
   return (
-    <div>
-      <Link href={Routes.HOME.path}>{Routes.HOME.name}</Link>
-      <ul>{<Navigator pathNames={[Routes.HOME, Routes.POSTS]} />}</ul>
+    <div className={styles.wrapper}>
+      <Link href={Routes.HOME.path}>
+        <Image src="/logo.png" alt="logo" width={64} height={64} />
+      </Link>
+      <ul className={styles.links}>
+        {
+          <Navigator
+            pathNames={[Routes.HOME, Routes.POSTS, Routes.PORTFOLIO]}
+          />
+        }
+      </ul>
     </div>
   );
 };

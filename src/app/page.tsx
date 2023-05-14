@@ -1,25 +1,29 @@
-import style from "@/app/styles/home.module.scss";
+import { Hero } from "@/components/hero/Hero";
 import { PostCard } from "@/components/post-card/PostCard";
 import { graphClient } from "@/lib/graphql-client";
 import { POST_QUERY } from "@/lib/queries";
 import { Post } from "@/types/post.type";
 
-type DaTaype = {
+import style from "./styles/home.module.scss";
+
+type DataType = {
   posts: Post[];
 };
 
 export default async function Home() {
-  const posts: DaTaype = await graphClient.request(POST_QUERY);
+  const posts: DataType = await graphClient.request(POST_QUERY);
   return (
-    <div className="">
-      <h1 className={style.textColor}>Home</h1>
-      <ul>
-        {posts.posts.map((post: any) => (
-          <li key={post.slug}>
-            <PostCard post={post} />
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <Hero />
+      <div className={style.wrapper}>
+        <div className={style.posts}>
+          {posts.posts.map((post: any) => (
+            <div key={post.slug}>
+              <PostCard post={post} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
   );
 }

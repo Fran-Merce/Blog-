@@ -11,9 +11,15 @@ export const Routes = {
     path: "/posts",
     name: "Posts",
   },
+  PORTFOLIO: {
+    path: "https://www.fran-merce.live",
+    name: "Portfolio",
+    isExternal: true,
+  },
 };
 
 export type RouteType = {
   path: string;
   name: string;
+  isExternal?: boolean;
 };

@@ -8,11 +8,15 @@ interface Props {
 const Navigator = ({ pathNames }: Props) => {
   return (
     <>
-      {pathNames.map((route: RouteType) => (
-        <li key={route.path}>
-          <Link style={{ color: "#FFF" }} href={route.path}>
-            {route.name}
-          </Link>
+      {pathNames.map(({ path, name, isExternal = false }: RouteType) => (
+        <li key={path}>
+          {isExternal ? (
+            <a href={path} target="_blank" rel="noreferrer">
+              {name}
+            </a>
+          ) : (
+            <Link href={path}>{name}</Link>
+          )}
         </li>
       ))}
     </>
