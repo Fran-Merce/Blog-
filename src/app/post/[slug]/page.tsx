@@ -1,11 +1,15 @@
 import { Poppins } from "next/font/google";
-import Image from "next/image";
+import { notFound } from "next/navigation";
 
 import { graphClient } from "@/lib/graphql-client";
 import { POST_QUERY_BY_SLUG } from "@/lib/queries";
+import { getPost } from "@/services/posts";
 import { Post } from "@/types/post.type";
 
-interface DaTypePost {
+import { PostContent } from "./components/postContent/PostContent";
+import styles from "./components/postContent/PostContent.module.scss";
+
+interface DataTypePost {
   post: Post;
 }
 
@@ -15,35 +19,21 @@ const roboto = Poppins({
   subsets: ["latin"],
 });
 
-async function getProduct(slug: string) {
-  const post: DaTypePost = await graphClient.request(POST_QUERY_BY_SLUG, {
-    slug,
-  });
-  return post;
+async function getData(slug: string) {
+  return getPost(slug);
 }
+
 export default async function PostPage({
   params: { slug },
 }: {
   params: { slug: string };
 }) {
-  const { post }: DaTypePost = await getProduct(slug);
+  const { post }: DataTypePost = await getData(slug);
+  if (!post) return notFound();
+
   return (
-    <div className={roboto.className}>
-      <div>
-        <header>
-          <Image
-            alt={post.coverImage.fileName}
-            src={post.coverImage.url}
-            width={700}
-            height={700}
-          />
-        </header>
-        <main>
-          <h1>{post.title}</h1>
-          <p>{post.excerpt}</p>
-          <div dangerouslySetInnerHTML={{ __html: post.content.html }} />
-        </main>
-      </div>
+    <div className={(roboto.className, styles.wrapper)}>
+      <PostContent post={post} />
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Routes } from "@/types/routes.type";
+import { Routes } from "@/routes";
 
 import Navigator from "../navigator/Navigator";
 import styles from "./Navbar.module.scss";

@@ -8,12 +8,14 @@ import { Post } from "@/types/post.type";
 import styles from "./PostCard.module.scss";
 
 export const PostCard = ({ post }: { post: Post }) => {
+  console.log(post);
+
   const { title, author, content, coverImage, slug, date, seo } = post;
   const getDescription = () => {
     const htmlToText = content.html.replace(/<[^>]*>?/gm, "");
     return textFormatterLenght(htmlToText, 96);
   };
-
+  if (!post) return null;
   return (
     <div className={styles.wrapper}>
       <div className={styles.imageContainer}>

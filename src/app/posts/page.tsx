@@ -1,17 +1,22 @@
-import PostsList from "@/app/posts/components/PostsList";
-import { graphClient } from "@/lib/graphql-client";
-import { POST_QUERY } from "@/lib/queries";
+import PostsList from "@/app/posts/components/PostsList/PostsList";
+import { getPosts } from "@/services/posts";
 import { Post } from "@/types/post.type";
 
-type DaTatype = {
+import styles from "./styles/posts.module.scss";
+
+type DataType = {
   posts: Post[];
 };
 
-export default async function Home() {
-  const posts: DaTatype = await graphClient.request(POST_QUERY);
+async function getData() {
+  return getPosts();
+}
+
+export default async function Posts() {
+  const posts: DataType = await getData();
 
   return (
-    <div>
+    <div className={styles.wrapper}>
       <h1>Posts</h1>
       <PostsList posts={posts.posts} />
     </div>

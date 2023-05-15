@@ -1,17 +1,12 @@
-import { Poppins, Roboto } from "next/font/google";
+import { Poppins } from "next/font/google";
 
+import { Footer } from "@/components/footer/Footer";
 import { Navbar } from "@/components/navbar/Navbar";
 import "@/styles/root.scss";
 
 interface Props {
   children: React.ReactNode;
 }
-
-// const roboto = Roboto({
-//   weight: "300",
-//   style: "normal",
-//   subsets: ["latin"],
-// });
 
 const poppins = Poppins({
   weight: "300",
@@ -23,6 +18,10 @@ export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <head>
+        <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atelier-cave-dark.min.css"
+        />
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
@@ -30,6 +29,7 @@ export default function RootLayout({ children }: Props) {
       <body className={poppins.className}>
         <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );

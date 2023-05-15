@@ -1,29 +1,38 @@
+import Link from "next/link";
+
 import { Hero } from "@/components/hero/Hero";
 import { PostCard } from "@/components/post-card/PostCard";
-import { graphClient } from "@/lib/graphql-client";
-import { POST_QUERY } from "@/lib/queries";
+import { Routes } from "@/routes";
+import { getPosts } from "@/services/posts";
 import { Post } from "@/types/post.type";
 
-import style from "./styles/home.module.scss";
+import "../styles/prism-one-dark.css";
+import styles from "./styles/home.module.scss";
 
 type DataType = {
   posts: Post[];
 };
 
+async function getData() {
+  return getPosts(4);
+}
+
 export default async function Home() {
-  const posts: DataType = await graphClient.request(POST_QUERY);
+  const posts: DataType = await getData();
+
   return (
-    <>
+    <div className={styles.wrapper}>
       <Hero />
-      <div className={style.wrapper}>
-        <div className={style.posts}>
-          {posts.posts.map((post: any) => (
-            <div key={post.slug}>
-              <PostCard post={post} />
-            </div>
+      <div className={styles.wrapperPosts}>
+        <div className={styles.posts}>
+          {posts.posts.map((post: Post) => (
+            <PostCard key={post.slug} post={post} />
           ))}
         </div>
+        <Link className={styles.link} href={Routes.POSTS.path}>
+          See all posts
+        </Link>
       </div>
-    </>
+    </div>
   );
 }

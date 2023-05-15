@@ -1,0 +1,11 @@
+.posts {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  place-items: center;
+  justify-content: center;
+  gap: 15px;
+  @media screen and (max-width: 500px) {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}

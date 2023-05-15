@@ -1,8 +1,8 @@
 import { gql } from "graphql-request";
 
 export const POST_QUERY = gql`
-  {
-    posts {
+  query GetPosts($first: Int) {
+    posts(first: $first) {
       title
       excerpt
       content {

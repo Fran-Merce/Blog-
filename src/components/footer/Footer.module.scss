@@ -1,0 +1,16 @@
+@import "~@/styles/functions";
+.wrapper {
+  height: 100px;
+  background-color: #000;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  color: #fff;
+}
+
+.heart {
+  width: min-content;
+  height: min-content;
+}
