@@ -5,7 +5,7 @@ import { Button } from "@/components/ui";
 import { POST_PER_PAGE } from "@/constants/offset.constant";
 import { Post } from "@/types/post.type";
 
-import styles from "./PostsList.module.scss";
+import styles from "./postsList.module.scss";
 
 import { useEffect, useState } from "react";
 
