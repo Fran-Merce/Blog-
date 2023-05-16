@@ -1,8 +1,6 @@
 import { Poppins } from "next/font/google";
 import { notFound } from "next/navigation";
 
-import { graphClient } from "@/lib/graphql-client";
-import { POST_QUERY_BY_SLUG } from "@/lib/queries";
 import { getPost } from "@/services/posts";
 import { Post } from "@/types/post.type";
 
