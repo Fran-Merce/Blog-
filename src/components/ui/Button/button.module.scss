@@ -10,6 +10,14 @@
   cursor: pointer;
   font-family: "Poppins", sans-serif;
 
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    :hover {
+      background-color: none !important;
+    }
+  }
+
   &.sm {
     padding: rem(4px) rem(20px);
     max-width: rem(150px);
@@ -35,7 +43,8 @@
     color: color(white);
     font-weight: 300;
     transition: background-color 0.2s ease-in-out;
-    &:hover {
+
+    &:hover:not([disabled]) {
       background-color: color(deep-purple-7);
     }
   }
@@ -47,7 +56,8 @@
     color: color(deep-purple-7);
     font-weight: 400;
     transition: background-color 0.2s ease-in-out;
-    &:hover {
+
+    &:hover:not([disabled]) {
       background-color: color(deep-purple-7);
       color: color(white);
     }

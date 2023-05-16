@@ -8,8 +8,6 @@ import { Post } from "@/types/post.type";
 import styles from "./PostCard.module.scss";
 
 export const PostCard = ({ post }: { post: Post }) => {
-  console.log(post);
-
   const { title, author, content, coverImage, slug, date, seo } = post;
   const getDescription = () => {
     const htmlToText = content.html.replace(/<[^>]*>?/gm, "");
