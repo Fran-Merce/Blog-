@@ -27,24 +27,6 @@
   }
 }
 
-.link {
-  position: relative;
-  margin: 1rem;
+.button {
   align-self: center;
-
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 2px;
-    background-color: color(deep-purple-6);
-    transition: all 0.3s ease-in-out;
-  }
-  &:hover {
-    &::before {
-      width: 100%;
-    }
-  }
 }

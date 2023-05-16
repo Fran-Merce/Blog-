@@ -3,6 +3,8 @@
   min-width: rem(64px);
   border-radius: rem(4px);
   margin: rem(5px);
+
+  word-wrap: break-word;
   border: none;
   font-size: 1rem;
   cursor: pointer;
@@ -10,16 +12,21 @@
 
   &.sm {
     padding: rem(4px) rem(20px);
+    max-width: rem(150px);
   }
 
   &.md {
     padding: rem(12px) rem(24px);
+    max-width: rem(200px);
   }
   &.lg {
     padding: rem(16px) rem(28px);
+    max-width: none;
   }
+
   &.full {
     padding: rem(16px) rem(28px);
+    max-width: none;
     width: 100%;
   }
 

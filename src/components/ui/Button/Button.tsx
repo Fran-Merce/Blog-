@@ -1,5 +1,3 @@
-import { Poppins } from "next/font/google";
-
 import { getClassName } from "@/helpers";
 
 import styles from "./button.module.scss";
@@ -18,14 +16,9 @@ export const Button = ({
   children,
   ...props
 }: ButtonProps) => {
-  const className: string = getClassName(styles, [
-    customClass,
-    size,
-    variant,
-    "button",
-  ]);
+  const className: string = getClassName(styles, [size, variant, "button"]);
   return (
-    <button className={className} {...props}>
+    <button className={`${customClass} ${className}`} {...props}>
       {children}
     </button>
   );

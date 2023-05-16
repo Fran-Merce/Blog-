@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { Hero } from "@/components/hero/Hero";
 import { PostCard } from "@/components/post-card/PostCard";
+import { Button } from "@/components/ui";
 import { Routes } from "@/routes";
 import { getPosts } from "@/services/posts";
 import { Post } from "@/types/post.type";
@@ -29,9 +30,9 @@ export default async function Home() {
             <PostCard key={post.slug} post={post} />
           ))}
         </div>
-        <Link className={styles.link} href={Routes.POSTS.path}>
-          See all posts
-        </Link>
+        <Button customClass={styles.button}>
+          <Link href={Routes.POSTS.path}>See all posts</Link>
+        </Button>
       </div>
     </div>
   );

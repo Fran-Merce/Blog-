@@ -31,7 +31,7 @@ function PostsList({ posts }: Props) {
           <PostCard key={post.slug} post={post} />
         ))}
       </div>
-      <Button customClass="default" disabled={!hasMore} onClick={viewMore}>
+      <Button disabled={!hasMore} onClick={viewMore}>
         Load More
       </Button>
     </>
