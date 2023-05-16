@@ -1,4 +1,53 @@
 @import "~@/styles/functions.scss";
 .button {
-  padding: rem(6px) rem(16px);
+  min-width: rem(64px);
+  border-radius: rem(4px);
+  margin: rem(5px);
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: "Poppins", sans-serif;
+
+  &.sm {
+    padding: rem(4px) rem(20px);
+  }
+
+  &.md {
+    padding: rem(12px) rem(24px);
+  }
+  &.lg {
+    padding: rem(16px) rem(28px);
+  }
+  &.full {
+    padding: rem(16px) rem(28px);
+    width: 100%;
+  }
+
+  &.primary {
+    background-color: color(deep-purple-6);
+    color: color(white);
+    font-weight: 300;
+    transition: background-color 0.2s ease-in-out;
+    &:hover {
+      background-color: color(deep-purple-7);
+    }
+  }
+
+  &.secondary {
+    border: 1px solid color(deep-purple-7);
+    background-color: color(white);
+    border-radius: rem(4px);
+    color: color(deep-purple-7);
+    font-weight: 400;
+    transition: background-color 0.2s ease-in-out;
+    &:hover {
+      background-color: color(deep-purple-7);
+      color: color(white);
+    }
+  }
+  &.rounded {
+    border-radius: rem(24px);
+    background-color: color(deep-purple-7);
+    color: color(white);
+  }
 }
