@@ -12,7 +12,7 @@ interface Props {
   posts: PostType[];
 }
 
-function PostsList({ posts }: Props) {
+export const PostsList = ({ posts }: Props) => {
   const [data, setData] = useState<PostType[]>(posts.slice(0, POST_PER_PAGE));
   const [hasMore, setHasMore] = useState<boolean>(true);
 
@@ -56,6 +56,4 @@ function PostsList({ posts }: Props) {
       </Button>
     </>
   );
-}
-
-export default PostsList;
+};
