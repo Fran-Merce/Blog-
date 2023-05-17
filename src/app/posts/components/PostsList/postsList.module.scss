@@ -1,5 +1,8 @@
+@import "~@/styles/functions";
+
 .posts {
   width: 100%;
+  min-height: 80vh;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   place-items: center;
@@ -8,4 +11,9 @@
   @media screen and (max-width: 500px) {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
+}
+
+.inputContainer {
+  margin-bottom: 2rem;
+  min-width: 250px;
 }

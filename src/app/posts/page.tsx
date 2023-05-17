@@ -17,7 +17,7 @@ export default async function Posts() {
 
   return (
     <div className={styles.wrapper}>
-      <h1>Posts</h1>
+      <h1 className={styles.title}>All Posts</h1>
       <PostsList posts={posts.posts} />
     </div>
   );

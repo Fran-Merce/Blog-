@@ -7,7 +7,7 @@ import "@/styles/root.scss";
 import { Post as PostType } from "@/types/post.type";
 
 import "../../../../../styles/prism-one-dark.css";
-import styles from "./PostContent.module.scss";
+import styles from "./postContent.module.scss";
 
 import { useEffect } from "react";
 
@@ -24,8 +24,8 @@ export const PostContent = ({ post }: { post: PostType }) => {
           alt={coverImage.fileName}
           src={coverImage.url}
           className={styles.coverImage}
-          width={900}
-          height={600}
+          width={700}
+          height={500}
         />
       </header>
       <main>

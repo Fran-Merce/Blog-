@@ -1,0 +1,19 @@
+@import "~@/styles/functions.scss";
+
+.notFoundWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .notFound {
+    font-size: 2rem;
+    font-weight: 600;
+    color: color(deep-purple-6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    @media screen and (max-width: 500px) {
+      font-size: 1.5rem;
+    }
+  }
+}
