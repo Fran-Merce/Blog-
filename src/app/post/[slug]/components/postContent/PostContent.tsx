@@ -7,7 +7,7 @@ import "@/styles/root.scss";
 import { PostType } from "@/types/post.type";
 
 import "../../../../../styles/prism-one-dark.css";
-import styles from "./postContent.module.scss";
+import styles from "./PostContent.module.scss";
 
 import { useEffect } from "react";
 
