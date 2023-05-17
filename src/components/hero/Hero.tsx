@@ -4,8 +4,6 @@ import avartarImg from "@/assets/images/avatar.png";
 
 import styles from "./Hero.module.scss";
 
-import React from "react";
-
 export const Hero = () => {
   return (
     <div className={styles.wrapper}>

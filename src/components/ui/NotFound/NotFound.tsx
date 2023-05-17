@@ -2,9 +2,7 @@ import Image from "next/image";
 
 import imageEmoji from "@/assets/images/emoji.png";
 
-import styles from "./notFound.module.scss";
-
-import React from "react";
+import styles from "./NotFound.module.scss";
 
 interface Props extends React.HTMLAttributes<HTMLDivElement> {
   text: string;

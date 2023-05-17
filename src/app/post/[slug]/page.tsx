@@ -1,14 +1,14 @@
 import { Poppins } from "next/font/google";
 import { notFound } from "next/navigation";
 
-import { getPost } from "@/services/posts";
-import { Post } from "@/types/post.type";
+import { getPost } from "@/services";
+import { PostType } from "@/types";
 
-import { PostContent } from "./components/postContent/PostContent";
+import { PostContent } from "./components";
 import styles from "./components/postContent/PostContent.module.scss";
 
 interface DataTypePost {
-  post: Post;
+  post: PostType;
 }
 
 const roboto = Poppins({

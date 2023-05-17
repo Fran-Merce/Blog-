@@ -27,7 +27,7 @@ export const POST_QUERY = gql`
 `;
 
 export const POST_QUERY_BY_SLUG = gql`
-  query Post($slug: String!) {
+  query PostType($slug: String!) {
     post(where: { slug: $slug }) {
       title
       excerpt

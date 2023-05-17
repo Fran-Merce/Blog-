@@ -4,7 +4,7 @@ import Image from "next/image";
 import Highlight from "react-highlight";
 
 import "@/styles/root.scss";
-import { Post as PostType } from "@/types/post.type";
+import { PostType } from "@/types/post.type";
 
 import "../../../../../styles/prism-one-dark.css";
 import styles from "./postContent.module.scss";

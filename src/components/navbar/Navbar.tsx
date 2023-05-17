@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { Navigator } from "@/components";
 import { Routes } from "@/routes";
 
-import Navigator from "../navigator/Navigator";
 import styles from "./Navbar.module.scss";
 
 export const Navbar = () => {

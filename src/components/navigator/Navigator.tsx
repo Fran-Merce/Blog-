@@ -1,10 +1,11 @@
 import Link from "next/link";
 
-import { RouteType } from "@/types/routes.type";
+import { RouteType } from "@/types";
 
 interface Props {
   pathNames: RouteType[];
 }
+
 const Navigator = ({ pathNames }: Props) => {
   return (
     <>

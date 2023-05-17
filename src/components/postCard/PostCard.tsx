@@ -1,13 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { dateFormmater } from "@/helpers/dateFormatter";
-import { textFormatterLenght } from "@/helpers/textFormatterLegth";
-import { Post } from "@/types/post.type";
+import { dateFormmater, textFormatterLenght } from "@/helpers";
+import { PostType } from "@/types";
 
 import styles from "./PostCard.module.scss";
 
-export const PostCard = ({ post }: { post: Post }) => {
+export const PostCard = ({ post }: { post: PostType }) => {
   const { title, author, content, coverImage, slug, date, seo } = post;
   const getDescription = () => {
     const htmlToText = content.html.replace(/<[^>]*>?/gm, "");

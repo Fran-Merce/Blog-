@@ -5,7 +5,7 @@ export const Routes = {
   },
   POST: {
     path: "/post/:id",
-    name: "Post",
+    name: "PostType",
   },
   POSTS: {
     path: "/posts",

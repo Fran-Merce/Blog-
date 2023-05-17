@@ -1,7 +1,6 @@
 import { Poppins } from "next/font/google";
 
-import { Footer } from "@/components/footer/Footer";
-import { Navbar } from "@/components/navbar/Navbar";
+import { Footer, Navbar } from "@/components";
 import "@/styles/root.scss";
 
 interface Props {

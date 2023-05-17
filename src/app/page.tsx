@@ -1,17 +1,15 @@
 import Link from "next/link";
 
-import { Hero } from "@/components/hero/Hero";
-import { PostCard } from "@/components/post-card/PostCard";
-import { Button } from "@/components/ui";
+import { Button, Hero, PostCard } from "@/components";
 import { Routes } from "@/routes";
-import { getPosts } from "@/services/posts";
-import { Post } from "@/types/post.type";
+import { getPosts } from "@/services";
+import "@/styles/prism-one-dark.css";
+import { PostType } from "@/types";
 
-import "../styles/prism-one-dark.css";
 import styles from "./styles/home.module.scss";
 
 type DataType = {
-  posts: Post[];
+  posts: PostType[];
 };
 
 async function getData() {
@@ -26,7 +24,7 @@ export default async function Home() {
       <Hero />
       <div className={styles.wrapperPosts}>
         <div className={styles.posts}>
-          {posts.posts.map((post: Post) => (
+          {posts.posts.map((post: PostType) => (
             <PostCard key={post.slug} post={post} />
           ))}
         </div>

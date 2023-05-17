@@ -1,11 +1,11 @@
-import PostsList from "@/app/posts/components/PostsList/PostsList";
 import { getPosts } from "@/services/posts";
-import { Post } from "@/types/post.type";
+import { PostType } from "@/types";
 
+import { PostsList } from "./components";
 import styles from "./styles/posts.module.scss";
 
 type DataType = {
-  posts: Post[];
+  posts: PostType[];
 };
 
 async function getData() {

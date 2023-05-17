@@ -2,8 +2,6 @@ import { AiFillGithub, AiFillHeart, AiFillLinkedin } from "react-icons/ai";
 
 import styles from "./Footer.module.scss";
 
-import React from "react";
-
 export const Footer = () => {
   return (
     <div className={styles.wrapper}>

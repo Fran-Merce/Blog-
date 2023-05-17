@@ -1,6 +1,6 @@
 import { getClassName } from "@/helpers";
 
-import styles from "./button.module.scss";
+import styles from "./Button.module.scss";
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   customClass?: string;

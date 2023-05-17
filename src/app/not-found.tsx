@@ -1,4 +1,4 @@
-import { NotFound } from "@/components/ui/NotFound/NotFound";
+import { NotFound } from "@/components";
 
 import styles from "./styles/not-found.module.scss";
 

@@ -1,23 +1,19 @@
 "use client";
 
-import Image from "next/image";
+import { Button, Input, NotFound, PostCard } from "@/components";
+import { POST_PER_PAGE } from "@/constants";
+import { PostType } from "@/types";
 
-import { PostCard } from "@/components/post-card/PostCard";
-import { Button, Input } from "@/components/ui";
-import { NotFound } from "@/components/ui/NotFound/NotFound";
-import { POST_PER_PAGE } from "@/constants/offset.constant";
-import { Post } from "@/types/post.type";
-
-import styles from "./postsList.module.scss";
+import styles from "./PostsList.module.scss";
 
 import { useEffect, useState } from "react";
 
 interface Props {
-  posts: Post[];
+  posts: PostType[];
 }
 
 function PostsList({ posts }: Props) {
-  const [data, setData] = useState<Post[]>(posts.slice(0, POST_PER_PAGE));
+  const [data, setData] = useState<PostType[]>(posts.slice(0, POST_PER_PAGE));
   const [hasMore, setHasMore] = useState<boolean>(true);
 
   const viewMore = () => {
@@ -43,10 +39,14 @@ function PostsList({ posts }: Props) {
 
   return (
     <>
-      <Input customClass={styles.inputContainer} onChange={handleSearch} />
+      <Input
+        placeholder="Typescript..."
+        customClass={styles.inputContainer}
+        onChange={handleSearch}
+      />
       <div className={styles.posts}>
         {data.length ? (
-          data.map((post: Post) => <PostCard key={post.slug} post={post} />)
+          data.map((post: PostType) => <PostCard key={post.slug} post={post} />)
         ) : (
           <NotFound text="Posts Not Found" />
         )}
